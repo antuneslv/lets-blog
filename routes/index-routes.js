@@ -10,4 +10,7 @@ module.exports = app => {
   app.get('/sign-up', (req, res) => {
     res.render('index', { role: 'sign-up' })
   })
+  app.get('/new-post', (req, res) => {
+    res.render('index', { role: 'new-post' })
+  })
 }

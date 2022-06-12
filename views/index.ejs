@@ -28,8 +28,12 @@
       <%- include('includes/log-in.ejs') %>
     <% } %>
 
-     <% if (role === "sign-up") { %>
+    <% if (role === "sign-up") { %>
       <%- include('includes/sign-up.ejs') %>
+    <% } %>
+
+    <% if (role === "new-post") { %>
+      <%- include('includes/new-post.ejs') %>
     <% } %>
 
   </main>
