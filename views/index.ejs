@@ -24,6 +24,14 @@
       <%- include('includes/post.ejs', (post)) %>
     <% } %>
 
+    <% if (role === "log-in") { %>
+      <%- include('includes/log-in.ejs') %>
+    <% } %>
+
+     <% if (role === "sign-up") { %>
+      <%- include('includes/sign-up.ejs') %>
+    <% } %>
+
   </main>
 
   <%- include('includes/footer') %>

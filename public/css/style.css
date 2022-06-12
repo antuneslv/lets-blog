@@ -1,3 +1,4 @@
+/* Global Style */
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +10,7 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+/* Header */
 .header {
   height: 120px;
   background-color: #0093FC;
@@ -22,13 +24,30 @@ body {
   color: #e0fbfc;
   font-style: italic;
   font-size: 40px;
+  text-shadow: 1px 1px 6px #00000099;
 }
 
+.header_link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+
+.header_link:hover {
+  color: #0e1247;
+}
+
+/* Main */
 .main {
   min-height: calc(100vh - 200px);
   padding: 40px 20px;
+  position: relative;
 }
 
+/* Home Page */
 .home_container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -75,6 +94,7 @@ body {
   color: #3d3d3d;
 }
 
+/* Post Page */
 .post {
   font-family: 'Roboto Serif', serif;
 }
@@ -94,9 +114,73 @@ body {
 }
 
 .post_content {
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
+/* Log In Page and Sign Up Page */
+.login_container, .signup_container {
+  width: 320px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 0 10px #00000066;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login_title, .signup_title {
+  color: #0077ff;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.login_input, .signup_input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 18px;
+  border: 1px solid #6b6b6b;
+}
+
+.login_button, .signup_button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  font-size: 18px;
+  color: #0077ff;
+  background-color: transparent;
+  border-radius: 40px;
+  border: 2px solid #0077ff;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.login_button:hover, .signup_button:hover {
+  color: #ffffff;
+  background-color: #0077ff;
+}
+
+.new-account-link {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;
+  color: #5a5a5a;
+}
+
+.new-account-link:hover {
+  color: #252525;
+}
+
+/* Footer */
 .footer {
   height: 80px;
   background-color: #333333;
@@ -121,6 +205,15 @@ body {
 
   .main {
     padding: 40px 40px;
+  }
+
+  .login_container {
+    height: 500px;
+  }
+
+  .login_container, .signup_container {
+    width: 440px;
+    padding: 40px;
   }
 }
 
