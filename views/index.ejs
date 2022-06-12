@@ -16,8 +16,13 @@
 
   <main class="main">
 
-    <%- include('includes/posts-list.ejs', (posts)) %>
-   
+    <% if (role === "home") { %>
+      <%- include('includes/posts-list.ejs', (posts)) %>
+    <% } %>
+
+    <% if (role === "post") { %>
+      <%- include('includes/post.ejs', (post)) %>
+    <% } %>
 
   </main>
 

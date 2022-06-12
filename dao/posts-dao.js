@@ -4,11 +4,18 @@ class PostsDAO {
   }
 
   findAll(callback) {
-    this.db.all('SELECT * FROM posts', callback)
+    this.db.all(
+      'SELECT *, (SELECT name FROM users WHERE id_user = id) as author FROM posts',
+      callback
+    )
   }
 
   findById(id, callback) {
-    this.db.get('SELECT * FROM posts WHERE id = ?', id, callback)
+    this.db.get(
+      'SELECT *, (SELECT name FROM users WHERE id_user = id) as author FROM posts WHERE id = ?',
+      id,
+      callback
+    )
   }
 }
 

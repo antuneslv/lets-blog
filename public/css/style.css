@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
 }
 
 body {
-  background-color: #E9EAF0;
+  background-color: #F4F2EF;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .header {
@@ -34,6 +34,14 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
   gap: 20px;
+}
+
+.link-to-post {
+  text-decoration: none;
+}
+
+.link-to-post:hover {
+  transform: scale(105%);
 }
 
 .card {
@@ -65,6 +73,28 @@ body {
   font-size: 14px;
   font-style: italic;
   color: #3d3d3d;
+}
+
+.post {
+  font-family: 'Roboto Serif', serif;
+}
+
+.post_title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.post_author {
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.post_author span {
+  font-style: italic;
+}
+
+.post_content {
+  line-height: 1.5;
 }
 
 .footer {

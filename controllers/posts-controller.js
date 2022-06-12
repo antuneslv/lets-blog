@@ -8,8 +8,21 @@ exports.getPosts = (req, res) => {
     }
 
     return res.render('index', {
-      role: 'posts',
+      role: 'home',
       posts: rows
+    })
+  })
+}
+
+exports.getPost = (req, res) => {
+  postsDAO.findById(req.params.id, (err, rows) => {
+    if (err) {
+      return res.json({ err: 'Erro ao consultar os dados' })
+    }
+
+    return res.render('index', {
+      role: 'post',
+      post: rows
     })
   })
 }

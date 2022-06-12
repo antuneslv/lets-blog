@@ -36,3 +36,6 @@ INSERT INTO posts (title, content, created_date, id_user) VALUES ('Primeiro Post
 SELECT * FROM users
 
 SELECT * FROM posts
+
+SELECT *, (SELECT name FROM users WHERE id_user = id) as author FROM posts
+
