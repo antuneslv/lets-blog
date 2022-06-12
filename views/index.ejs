@@ -29,7 +29,7 @@
     <% } %>
 
     <% if (role === "sign-up") { %>
-      <%- include('includes/sign-up.ejs') %>
+      <%- include('includes/sign-up.ejs', (users)) %>
     <% } %>
 
     <% if (role === "new-post") { %>

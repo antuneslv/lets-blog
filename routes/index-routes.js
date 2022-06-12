@@ -7,9 +7,7 @@ module.exports = app => {
   app.get('/log-in', (req, res) => {
     res.render('index', { role: 'log-in' })
   })
-  app.get('/sign-up', (req, res) => {
-    res.render('index', { role: 'sign-up' })
-  })
+  app.get('/sign-up', usersController.openSignUp)
   app.get('/new-post', (req, res) => {
     res.render('index', { role: 'new-post' })
   })
