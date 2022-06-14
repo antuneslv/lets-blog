@@ -1,11 +1,17 @@
 <div class="home_container">
-  <% posts.forEach(post => { %>
-    <a href="/post/<%= post.id %>" class="link-to-post">
-      <article class="card">
-          <h3 class="card_title"><%= post.title %></h3>
-          <p class="card_author">Autor: <strong><%= post.author %></strong></p>
-          <p class="card_date">Data do post: <span><%= post.created_date %></span></p>
-        </article>
-    </a>
-  <% }) %>
+  <a href="/new-post" class="new-post">
+    <span class="material-symbols-outlined">add</span>
+    Novo Post
+  </a>
+  <div class="post_container">
+    <% posts.forEach(post => { %>
+      <a href="/post/<%= post.id %>" class="link-to-post">
+        <article class="card">
+            <h3 class="card_title"><%= post.title %></h3>
+            <p class="card_author">Autor: <strong><%= post.author %></strong></p>
+            <p class="card_date">Data do post: <span><%= post.created_date %></span></p>
+          </article>
+      </a>
+    <% }) %>
+  </div>
 </div>
