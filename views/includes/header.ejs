@@ -1,11 +1,18 @@
 <header class="header">
   <h1 class="header_title">Let's Blog</h1>
   
-    <% if (role === "home") { %>  
-      <a href="/log-in" class="header_link">
-        <span class="material-symbols-outlined">login</span>
-        Log In
-      </a>
+    <% if (role === "home") { %>
+      <% if (isLoggedIn) { %>    
+          <a href="/log-out" class="header_link-out">
+            <span class="material-symbols-outlined">logout</span>
+            Sair
+          </a>
+      <% } else { %> 
+          <a href="/log-in" class="header_link">
+            <span class="material-symbols-outlined">login</span>
+            Log In
+          </a>
+      <% } %>
     <% } %>
 
     <% if (role === "post" || role === "log-in" || role === "sign-up" || role === "new-post") { %>

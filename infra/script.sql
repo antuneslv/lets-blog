@@ -39,3 +39,5 @@ SELECT * FROM posts
 
 SELECT *, (SELECT name FROM users WHERE id_user = id) as author FROM posts
 
+SELECT * FROM users WHERE email = 'fulano@email.com'
+

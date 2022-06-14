@@ -3,13 +3,18 @@ class UsersDAO {
     this.db = conn
   }
 
-  findAll(callback) {
-    this.db.all('SELECT * FROM users', callback)
+  findByEmail(email, callback) {
+    this.db.get("SELECT * FROM users WHERE email = $email", email, callback)
   }
 
-  findById(id, callback) {
-    this.db.get('SELECT * FROM posts WHERE id = ?', id, callback)
-  }
+  // findAll(callback) {
+  //   this.db.all('SELECT * FROM users', callback)
+  // }
+
+  // findById(id, callback) {
+  //   this.db.get('SELECT * FROM posts WHERE id = ?', id, callback)
+  // }
+  
 }
 
 module.exports = conn => new UsersDAO(conn)

@@ -1,8 +1,16 @@
 <div class="login_container">
-  <h2 class="login_title">Faça seu login</h2>
-  <input type="text" placeholder="E-mail" class="login_input">
-  <input type="text" placeholder="Senha" class="login_input">
-  <button class="login_button">Entrar</button>
+  <form class="login_form" action="/log-in" method="post">
+    <h2 class="login_title">Faça seu login</h2>
+    <input type="email" name="email" placeholder="E-mail" class="login_input" />
+    <input type="password" name="password" placeholder="Senha" class="login_input" />
+    <% if (isInvalid) { %>
+    <div class="failLogin">
+      <p>Usuário e/ou senha inválido(s).</p>
+      <p>Por favor, tente novamente.</p>
+    </div>
+    <% } %>
+    <button class="login_button">Entrar</button>
+  </form>
   <a href="/sign-up" class="new-account-link">
     <span class="material-symbols-outlined">person_add</span>
     Criar conta
