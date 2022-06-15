@@ -19,11 +19,11 @@ CREATE TABLE posts (
 
 ALTER TABLE posts ADD COLUMN id_user INTEGER REFERENCES users(id);
 
-INSERT INTO users (email, name, password, created_date) VALUES ('fulano@email.com', 'Fulano da Silva', '123456', datetime('now', 'localtime'));
+INSERT INTO users (email, name, password, created_date) VALUES ('fulano@email.com', 'Fulano da Silva', 'senha1', datetime('now', 'localtime'));
 
-INSERT INTO users (email, name, password, created_date) VALUES ('ciclano@email.com', 'Ciclano Souza', '321321', datetime('now', 'localtime'));
+INSERT INTO users (email, name, password, created_date) VALUES ('ciclano@email.com', 'Ciclano Souza', 'senha2', datetime('now', 'localtime'));
 
-INSERT INTO users (email, name, password, created_date) VALUES ('maria@email.com', 'Maria José', '654321', datetime('now', 'localtime'));
+INSERT INTO users (email, name, password, created_date) VALUES ('maria@email.com', 'Maria José', 'senha3', datetime('now', 'localtime'));
 
 INSERT INTO posts (title, content, created_date, id_user) VALUES ('Primeiro Post do Fulano', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ex dui, vestibulum sit amet maximus ac, scelerisque sed quam. Curabitur id elit sit amet metus consequat pellentesque nec eget elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras at purus non magna mattis tempus. Aenean mattis elementum pulvinar. Maecenas pulvinar, tellus id vestibulum faucibus, sem diam vestibulum magna, a molestie erat arcu quis purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce facilisis sapien sit amet justo egestas, nec tempus risus mollis. Nullam lacinia at nulla sed dapibus. Maecenas dapibus ullamcorper hendrerit. Sed a porttitor lacus, vitae faucibus metus. Mauris id aliquet nunc. Nunc non pretium leo, id mollis diam. Aliquam sed suscipit neque. Donec a maximus purus. Phasellus vehicula quis neque in aliquet.', datetime('now', 'localtime'), '1');
 
@@ -36,8 +36,3 @@ INSERT INTO posts (title, content, created_date, id_user) VALUES ('Primeiro Post
 SELECT * FROM users
 
 SELECT * FROM posts
-
-SELECT *, (SELECT name FROM users WHERE id_user = id) as author FROM posts
-
-SELECT * FROM users WHERE email = 'fulano@email.com'
-

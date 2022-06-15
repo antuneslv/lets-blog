@@ -352,6 +352,6 @@ body {
   }
 
   .home_container {
-  min-height: calc(100vh - 360px);
-}
+    min-height: calc(100vh - 360px);
+  }
 }

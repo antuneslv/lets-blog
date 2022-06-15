@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 
 let userSession
 
-exports.login = (req, res) => {
+exports.logIn = (req, res) => {
   res.render('index', 
   {
     role: 'log-in',
@@ -39,7 +39,7 @@ exports.auth = (req, res) => {
   })
 }
 
-exports.logout = (req, res) => {
+exports.logOut = (req, res) => {
   userSession = req.session
 
   userSession.token = null
