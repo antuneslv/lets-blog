@@ -8,7 +8,6 @@ exports.newPost = (req, res) => {
   })
 }
 
-
 exports.getPosts = (req, res) => {
   const userSession = req.session
 
@@ -44,6 +43,13 @@ exports.savePost = (req, res) => {
   const userSession = req.session
   const userId = userSession.UserId
   const { title, content } = req.body
+
+  if (title === '' || content === '') {
+    return res.render('index', {
+      role: 'new-post',
+      isInvalid: true
+    })
+  }
   
   postsDAO.save(userId, title, content, (err) =>{
     if (err) {
