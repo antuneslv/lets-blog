@@ -14,8 +14,6 @@ module.exports = app => {
   app.get('/sign-up', signupController.signUp)
   app.post('/sign-up', signupController.newAcc)
 
-  app.get('/new-post', checkToken, (req, res) => {
-    res.render('index', { role: 'new-post' })
-  })
+  app.get('/new-post', checkToken, postsController.newPost)
   app.post('/new-post', postsController.savePost)
 }

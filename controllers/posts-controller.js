@@ -1,6 +1,14 @@
 const conn = require('../infra/db-connection')('infra/blog.db')
 const postsDAO = require('../dao/posts-dao')(conn)
 
+exports.newPost = (req, res) => {
+  res.render('index', {
+    role: 'new-post',
+    isInvalid: false
+  })
+}
+
+
 exports.getPosts = (req, res) => {
   const userSession = req.session
 
