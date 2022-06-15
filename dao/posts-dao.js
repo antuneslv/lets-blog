@@ -18,14 +18,13 @@ class PostsDAO {
     )
   }
 
-  save() {
+  save(userId, title, content, callback) {
     this.db.run(
       'INSERT INTO posts (id_user, title, content, created_date) VALUES (?, ?, ?, datetime("now", "localtime"))',
-      [id_user, title, content],
+      [userId, title, content],
       callback
     )
   }
-
 }
 
 module.exports = conn => new PostsDAO(conn)

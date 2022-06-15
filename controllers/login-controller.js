@@ -34,6 +34,7 @@ exports.auth = (req, res) => {
     )
 
     userSession.token = token
+    userSession.UserId = user.id
 
     res.redirect('/')
   })

@@ -31,3 +31,17 @@ exports.getPost = (req, res) => {
     })
   })
 }
+
+exports.savePost = (req, res) => {
+  const userSession = req.session
+  const userId = userSession.UserId
+  const { title, content } = req.body
+  
+  postsDAO.save(userId, title, content, (err) =>{
+    if (err) {
+      return res.json({ err: 'Erro ao gravar os dados' })
+    }
+
+    return res.redirect('/')
+  })
+}

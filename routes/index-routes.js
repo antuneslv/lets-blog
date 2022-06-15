@@ -17,4 +17,5 @@ module.exports = app => {
   app.get('/new-post', checkToken, (req, res) => {
     res.render('index', { role: 'new-post' })
   })
+  app.post('/new-post', postsController.savePost)
 }
