@@ -2,13 +2,23 @@
   <div class="signup_title-container">
     <h2 class="signup_title">Cadastre-se Para Começar a Postar</h2>
   </div>
- <form class="signup_form" action="/sign-up" method="post">
+  <form class="signup_form" action="/sign-up" method="post">
     <input type="email" name="email" placeholder="E-mail" class="signup_input">
-    <input type="text" name="name" placeholder="Nome Completo" class="signup_input">
-    <input type="password" name="password" placeholder="Senha" class="signup_input">
-    <% if (isInvalid) { %>
+    <% if (errorEmail) { %>
     <div class="failLogin">
-      <p>E-mail já cadastrado.</p>
+      <p><%= errorEmail %></p>
+    </div>
+    <% } %>
+    <input type="text" name="name" placeholder="Nome Completo" class="signup_input">
+    <% if (errorName) { %>
+    <div class="failLogin">
+      <p><%= errorName %></p>
+    </div>
+    <% } %>
+    <input type="password" name="password" placeholder="Senha" class="signup_input">
+    <% if (errorPassword) { %>
+    <div class="failLogin">
+      <p><%= errorPassword %></p>
     </div>
     <% } %>
     <button class="signup_button">Cadastrar</button>
