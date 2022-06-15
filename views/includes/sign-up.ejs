@@ -5,19 +5,19 @@
   <form class="signup_form" action="/sign-up" method="post">
     <input type="email" name="email" placeholder="E-mail" class="signup_input">
     <% if (errorEmail) { %>
-    <div class="failLogin">
+    <div class="validationError">
       <p><%= errorEmail %></p>
     </div>
     <% } %>
     <input type="text" name="name" placeholder="Nome Completo" class="signup_input">
     <% if (errorName) { %>
-    <div class="failLogin">
+    <div class="validationError">
       <p><%= errorName %></p>
     </div>
     <% } %>
     <input type="password" name="password" placeholder="Senha" class="signup_input">
     <% if (errorPassword) { %>
-    <div class="failLogin">
+    <div class="validationError">
       <p><%= errorPassword %></p>
     </div>
     <% } %>
