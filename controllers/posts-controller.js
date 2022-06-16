@@ -127,13 +127,25 @@ exports.editedPost = (req, res) => {
 }
 
 exports.deletePost = (req, res) => {
+  const userSession = req.session
+  const userId = userSession.UserId
   const id = req.params.id;
 
-  postsDAO.delete(id, (err) => {
+  postsDAO.findById(id, (err, post) => {
     if (err) {
-      return res.json({ err: "Erro ao remover os dados" });
+      return res.json({ err: 'Erro ao consultar os dados' })
     }
 
-    return res.redirect("/");
-  });
+    if (post === undefined || userId !== post.id_user) {
+      return res.redirect('/')
+    }
+
+    postsDAO.delete(id, err2 => {
+      if (err2) {
+        return res.json({ err: 'Erro ao remover os dados' })
+      }
+
+      return res.redirect('/')
+    })
+  })
 }
