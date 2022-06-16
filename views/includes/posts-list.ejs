@@ -9,7 +9,7 @@
         <article class="card">
           <h3 class="card_title"><%= post.title %></h3>
           <p class="card_author">Autor: <strong><%= post.author %></strong></p>
-          <p class="card_date">Data do post: <span><%= post.created_date %></span></p>
+          <p class="card_date">Data do post: <span><%= new Date(post.created_date).toLocaleDateString("pt-br") %></span></p>
         </article>
       </a>
     <% }) %>

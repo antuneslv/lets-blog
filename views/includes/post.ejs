@@ -5,13 +5,25 @@
       <p class="post_author">
         Por 
         <strong><%= post.author %> </strong>
-         em 
-        <span><%= post.created_date %></span>
+        em 
+        <span>
+          <%= new Date(post.created_date).toLocaleDateString("pt-br") %>
+        </span>
+        às
+        <span>
+          <%= new Date(post.created_date).toLocaleTimeString("pt-br") %>
+        </span>
       </p>
       <% if (post.edited_date) { %>
       <p class="post_edited-date">
         Editado em 
-        <span><%= post.edited_date %></span>
+        <span>
+          <%= new Date(post.edited_date).toLocaleDateString("pt-br") %>
+        </span>
+        às
+        <span>
+          <%= new Date(post.edited_date).toLocaleTimeString("pt-br") %>
+        </span>
       </p>
       <% } %>
     </div>
