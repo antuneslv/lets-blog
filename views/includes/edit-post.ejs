@@ -1,12 +1,12 @@
-<div class="new-post_container">
-  <form action="/edit-post/<%= post.id %>" method="post">
+<form action="/edit-post/<%= post.id %>" method="post" class="new-post_form">
+  <div>
     <input type="text" name="title" placeholder="Título do Post" value="<%= post.title %>" class="new-post_title" />
-    <textarea name="content" cols="30" rows="24" placeholder="Conteúdo do Post" class="new-post_content"><%= post.content %></textarea>
+    <textarea name="content" cols="30" rows="17" placeholder="Conteúdo do Post" class="new-post_content"><%= post.content %></textarea>
     <% if (isInvalid) { %>
     <div class="validation-error">
       <p>Todos os campos são obrigatórios.</p>
     </div>
     <% } %>
-    <button class="new-post_submit-btn">Editar Post</button>
-  </form>
-</div>
+  </div>
+  <button class="new-post_submit-btn">Editar Post</button>
+</form>
