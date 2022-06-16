@@ -27,14 +27,22 @@ exports.getPosts = (req, res) => {
 }
 
 exports.getPost = (req, res) => {
-  postsDAO.findById(req.params.id, (err, rows) => {
+  const userSession = req.session
+  const userId = userSession.UserId
+
+  postsDAO.findById(req.params.id, (err, post) => {
     if (err) {
       return res.json({ err: 'Erro ao consultar os dados' })
     }
 
+    if (post === undefined) {
+      return res.redirect('/')
+    }
+
     return res.render('index', {
       role: 'post',
-      post: rows
+      userId,
+      post
     })
   })
 }
@@ -57,5 +65,29 @@ exports.savePost = (req, res) => {
     }
 
     return res.redirect('/')
+  })
+}
+
+exports.editPost = (req, res) => {
+  const userSession = req.session
+  const userId = userSession.UserId
+
+  const id = req.params.id
+
+  postsDAO.findById(id, (err, post) => {
+    if (err) {
+      return res.json({ err: 'Erro ao consultar os dados' })
+    }
+
+    if (post === undefined || userId !== post.id_user) {
+      return res.redirect('/')
+    }
+
+    return res.render('index', {
+      role: 'edit-post',
+      userId,
+      post,
+      isInvalid: false
+    })
   })
 }

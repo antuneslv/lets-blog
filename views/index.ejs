@@ -21,7 +21,7 @@
     <% } %>
 
     <% if (role === "post") { %>
-      <%- include('includes/post.ejs', (post)) %>
+      <%- include('includes/post.ejs', (userId, post)) %>
     <% } %>
 
     <% if (role === "log-in") { %>
@@ -34,6 +34,10 @@
 
     <% if (role === "new-post") { %>
       <%- include('includes/new-post.ejs') %>
+    <% } %>
+
+    <% if (role === "edit-post") { %>
+      <%- include('includes/edit-post.ejs'), (userId, post) %>
     <% } %>
 
   </main>

@@ -16,4 +16,7 @@ module.exports = app => {
 
   app.get('/new-post', checkToken, postsController.newPost)
   app.post('/new-post', postsController.savePost)
+
+  app.get('/edit-post/:userId/:id', checkToken, postsController.editPost)
+  // app.post('/edit-post/:id', postsController.)
 }

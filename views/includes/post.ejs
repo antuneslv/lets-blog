@@ -7,4 +7,10 @@
     <span><%= post.created_date %></span>
   </p>
   <p class="post_content"><%= post.content %></p>
+  <% if (userId === post.id_user) { %>
+  <a href="/edit-post/<%= userId %>/<%= post.id %>" class="edit-btn">
+    <span class="material-symbols-outlined">edit</span> 
+    Editar
+  </a>
+  <% } %>
 </article>

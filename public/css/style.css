@@ -283,7 +283,25 @@ body {
   cursor: pointer;
 }
 
-.new-post_submit-btn:hover {
+.edit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 140px;
+  padding: 10px 18px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #0077ff;
+  border-radius: 40px;
+  border: 0;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.new-post_submit-btn:hover, .edit-btn:hover {
   background-color: #015ac0;
 }
 
