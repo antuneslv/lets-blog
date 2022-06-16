@@ -28,14 +28,12 @@ exports.newAcc = (req, res) => {
       })
     } 
     
-    if (email === '' || name === '' || password === '') {
-      email === '' ? (errorEmail = 'E-mail obrigatório') : (errorEmail = null)
+    if (!email || !name || !password) {
+      !email ? (errorEmail = 'E-mail obrigatório') : (errorEmail = null)
 
-      name === '' ? (errorName = 'Nome obrigatório') : (errorName = null)
+      !name ? (errorName = 'Nome obrigatório') : (errorName = null)
 
-      password === ''
-        ? (errorPassword = 'Senha obrigatória')
-        : (errorPassword = null)
+      !password ? (errorPassword = 'Senha obrigatória') : (errorPassword = null)
 
       return res.render('index', {
         role: 'sign-up',

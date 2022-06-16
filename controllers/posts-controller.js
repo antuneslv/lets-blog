@@ -52,7 +52,7 @@ exports.savePost = (req, res) => {
   const userId = userSession.UserId
   const { title, content } = req.body
 
-  if (title === '' || content === '') {
+  if (!title || !content) {
     return res.render('index', {
       role: 'new-post',
       isInvalid: true
@@ -107,7 +107,7 @@ exports.editedPost = (req, res) => {
       return res.redirect('/')
     }
 
-    if (title === '' || content === '') {
+    if (!title || !content) {
       return res.render('index', {
         role: 'edit-post',
         userId,
