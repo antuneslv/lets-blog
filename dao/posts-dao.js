@@ -26,8 +26,7 @@ class PostsDAO {
     )
   }
 
-  edit(id, data, callback) {
-    const { title, content } = data
+  edit(id, title, content, callback) {
     this.db.run(
       'UPDATE posts SET title = ?, content = ? WHERE id = ?',
       [title, content, id],

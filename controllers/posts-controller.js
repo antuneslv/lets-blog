@@ -93,14 +93,35 @@ exports.editPost = (req, res) => {
 }
 
 exports.editedPost = (req, res) => {
-  const formData = req.body
+  const userSession = req.session
+  const userId = userSession.UserId
+  const {title, content} = req.body
   const id = req.params.id
 
-  postsDAO.edit(id, formData, err => {
+  postsDAO.findById(id, (err, post) => {
     if (err) {
-      return res.json({ err: 'Erro ao atualizar os dados' })
+      return res.json({ err: 'Erro ao consultar os dados' })
     }
 
-    return res.redirect(`/post/${id}`)
+    if (post === undefined || userId !== post.id_user) {
+      return res.redirect('/')
+    }
+
+    if (title === '' || content === '') {
+      return res.render('index', {
+        role: 'edit-post',
+        userId,
+        post,
+        isInvalid: true
+      })
+    }
+
+    postsDAO.edit(id, title, content, err2 => {
+      if (err2) {
+        return res.json({ err: 'Erro ao atualizar os dados' })
+      }
+
+      return res.redirect(`/post/${id}`)
+    })
   })
 }
