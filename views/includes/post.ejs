@@ -7,7 +7,7 @@
        em 
       <span><%= post.created_date %></span>
     </p>
-    <p class="post_content"><%= post.content %></p>
+    <pre class="post_content"><%= post.content %></pre>
   </div>
   <% if (userId === post.id_user) { %>
   <div class="buttons-group">

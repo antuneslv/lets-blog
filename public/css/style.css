@@ -152,7 +152,14 @@ body {
 }
 
 .post_content {
+  font-family: 'Roboto Serif', serif;
   line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 
 .buttons-group {
