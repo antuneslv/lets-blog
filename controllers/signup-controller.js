@@ -1,5 +1,6 @@
 const conn = require('../infra/db-connection')('infra/blog.db')
 const usersDAO = require('../dao/users-dao')(conn)
+const bcrypt = require('bcrypt')
 
 exports.signUp = (req, res) => {
   res.render('index', {
@@ -10,8 +11,11 @@ exports.signUp = (req, res) => {
   })
 }
 
-exports.newAcc = (req, res) => {
+exports.newAcc = async (req, res) => {
   const { email, name, password } = req.body
+
+  const salt = await bcrypt.genSalt(12)
+  const passwordHash = await bcrypt.hash(password, salt)
 
   usersDAO.findByEmail(email, (err, user) => {
     let errorEmail = null
@@ -43,7 +47,7 @@ exports.newAcc = (req, res) => {
       })
     }
 
-    usersDAO.save(email, name, password, (err2) => {
+    usersDAO.save(email, name, passwordHash, (err2) => {
       if (err2) {
         return res.json({ err: 'Erro ao gravar os dados' })
       }
