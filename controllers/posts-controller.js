@@ -125,3 +125,15 @@ exports.editedPost = (req, res) => {
     })
   })
 }
+
+exports.deletePost = (req, res) => {
+  const id = req.params.id;
+
+  postsDAO.delete(id, (err) => {
+    if (err) {
+      return res.json({ err: "Erro ao remover os dados" });
+    }
+
+    return res.redirect("/");
+  });
+}

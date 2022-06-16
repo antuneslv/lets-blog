@@ -9,6 +9,7 @@ module.exports = app => {
 
   app.get('/log-in', loginController.logIn)
   app.post('/log-in', loginController.auth)
+  
   app.get('/log-out', loginController.logOut)
 
   app.get('/sign-up', signupController.signUp)
@@ -19,4 +20,6 @@ module.exports = app => {
 
   app.get('/edit-post/:id', checkToken, postsController.editPost)
   app.post('/edit-post/:id', postsController.editedPost)
+
+  app.get('/delete-post/:id', postsController.deletePost)
 }

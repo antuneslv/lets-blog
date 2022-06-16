@@ -33,6 +33,10 @@ class PostsDAO {
       callback
     )
   }
+
+  delete(id, callback) {
+    this.db.run('DELETE FROM posts WHERE id = ?', id, callback)
+  }
 }
 
 module.exports = conn => new PostsDAO(conn)

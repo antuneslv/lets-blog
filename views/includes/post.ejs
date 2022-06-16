@@ -1,16 +1,34 @@
 <article class="post">
-  <h2 class="post_title"><%= post.title %></h2>
-  <p class="post_author">
-    Por 
-    <strong><%= post.author %> </strong>
-     em 
-    <span><%= post.created_date %></span>
-  </p>
-  <p class="post_content"><%= post.content %></p>
+  <div>
+    <h2 class="post_title"><%= post.title %></h2>
+    <p class="post_author">
+      Por 
+      <strong><%= post.author %> </strong>
+       em 
+      <span><%= post.created_date %></span>
+    </p>
+    <p class="post_content"><%= post.content %></p>
+  </div>
   <% if (userId === post.id_user) { %>
-  <a href="/edit-post/<%= post.id %>" class="edit-btn">
-    <span class="material-symbols-outlined">edit</span> 
-    Editar
-  </a>
+  <div class="buttons-group">
+    <button class="delete-btn" id="open-modal">
+      <span class="material-symbols-outlined">delete</span>
+      Excluir
+    </button>
+    <a href="/edit-post/<%= post.id %>" class="edit-btn">
+      <span class="material-symbols-outlined">edit</span> 
+      Editar
+    </a>
+  </div>
   <% } %>
 </article>
+<dialog class="modal" id="modal">
+  <button class="modal_close" id="close-modal">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <div class="modal_info">
+    <h3 class="modal_title">Excluir Post</h3>
+    <p class="modal_text">Você tem certeza que deseja excluir este post?</p>
+  </div>
+  <a href="/delete-post/<%= post.id %>" class="modal_confirmation">Confirmar Exclusão</a>
+</dialog>

@@ -50,7 +50,7 @@ body {
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 /* Home Page */
@@ -99,6 +99,7 @@ body {
 
 .card {
   width: 300px;
+  height: 100%;
   border: 2px solid #555555;
   padding: 20px;
   border-radius: 20px;
@@ -131,11 +132,15 @@ body {
 /* Post Page */
 .post {
   font-family: 'Roboto Serif', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
 }
 
 .post_title {
   text-align: center;
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 
 .post_author {
@@ -151,6 +156,113 @@ body {
   line-height: 1.6;
 }
 
+.buttons-group {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.edit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 140px;
+  padding: 10px 18px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #0077ff;
+  border-radius: 40px;
+  border: 0;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.edit-btn:hover {
+  background-color: #015ac0;
+}
+
+.delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 140px;
+  padding: 10px 18px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #df0000;
+  border-radius: 40px;
+  border: 0;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.delete-btn:hover {
+  background-color: #ad0101;
+}
+
+.modal {
+  margin: auto;
+  padding: 20px 20px 40px;
+  border: 0;
+  border-radius: 20px;
+  text-align: center;
+}
+
+dialog::backdrop {
+  background-color: #00000080;
+}
+
+.modal_close {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s;
+  position: absolute;
+  top: 6%;
+  right: 5%;
+}
+
+.modal_close:hover {
+  background-color: #dddbdb;
+}
+
+.modal_info {
+  text-align: left;
+}
+
+.modal_title {
+  margin-bottom: 20px;
+}
+
+.modal_text {
+  padding-bottom: 40px;
+}
+
+.modal_confirmation {
+  width: auto;
+  text-decoration: none;
+  border-radius: 40px;
+  color: #ffffff;
+  background-color: #df0000;
+  padding: 10px 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.modal_confirmation:hover {
+  background-color: #ad0101;
+}
+
+
 /* Log In Page and Sign Up Page */
 .login_container, .signup_container {
   width: 320px;
@@ -163,7 +275,7 @@ body {
   justify-content: space-between;
   gap: 20px;
   box-shadow: 0 0 10px #00000066;
-  align-self: center;
+  margin: auto;
 }
 
 .signup_title-container {
@@ -283,25 +395,7 @@ body {
   cursor: pointer;
 }
 
-.edit-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 140px;
-  padding: 10px 18px;
-  font-size: 18px;
-  color: #ffffff;
-  background-color: #0077ff;
-  border-radius: 40px;
-  border: 0;
-  font-weight: 600;
-  transition: all 0.3s;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.new-post_submit-btn:hover, .edit-btn:hover {
+.new-post_submit-btn:hover {
   background-color: #015ac0;
 }
 
@@ -345,9 +439,14 @@ body {
     align-self: flex-end;
     margin-right: 20px;
   }
-}
 
-@media (min-width: 768px) {
+  .modal {
+    padding: 40px;
+  }
+
+  .modal_info {
+    margin-bottom: 20px;
+  }
 }
 
 @media (min-width: 1024px) {
