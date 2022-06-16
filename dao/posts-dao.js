@@ -28,7 +28,7 @@ class PostsDAO {
 
   edit(id, title, content, callback) {
     this.db.run(
-      'UPDATE posts SET title = ?, content = ? WHERE id = ?',
+      'UPDATE posts SET title = ?, content = ?, edited_date = datetime("now", "localtime") WHERE id = ?',
       [title, content, id],
       callback
     )

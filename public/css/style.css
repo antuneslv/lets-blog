@@ -142,12 +142,16 @@ body {
   margin: 40px 0;
 }
 
-.post_author {
-  font-size: 14px;
+.post_info {
   margin-bottom: 40px;
 }
 
-.post_author span {
+.post_author, .post_edited-date {
+  font-size: 14px;
+  line-height: 2;
+}
+
+.post_author span, .post_edited-date span  {
   font-style: italic;
 }
 

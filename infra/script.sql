@@ -15,7 +15,8 @@ CREATE TABLE posts (
 	id_user INTEGER REFERENCES users(id),
 	title TEXT NOT NULL,
 	content TEXT NOT NULL,
-  created_date TEXT NOT NULL
+  created_date TEXT NOT NULL,
+	edited_date TEXT DEFAULT null
 );
 
 -- ALTER TABLE posts ADD COLUMN id_user INTEGER REFERENCES users(id);

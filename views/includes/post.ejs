@@ -1,12 +1,20 @@
 <article class="post">
   <div>
     <h2 class="post_title"><%= post.title %></h2>
-    <p class="post_author">
-      Por 
-      <strong><%= post.author %> </strong>
-       em 
-      <span><%= post.created_date %></span>
-    </p>
+    <div class="post_info">
+      <p class="post_author">
+        Por 
+        <strong><%= post.author %> </strong>
+         em 
+        <span><%= post.created_date %></span>
+      </p>
+      <% if (post.edited_date) { %>
+      <p class="post_edited-date">
+        Editado em 
+        <span><%= post.edited_date %></span>
+      </p>
+      <% } %>
+    </div>
     <pre class="post_content"><%= post.content %></pre>
   </div>
   <% if (userId === post.id_user) { %>
