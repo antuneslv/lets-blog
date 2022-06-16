@@ -130,11 +130,13 @@ body {
 
 /* Post Page */
 .post {
+  max-width: 1200px;
   font-family: 'Roboto Serif', serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+  align-self: center;
 }
 
 .post_title {
