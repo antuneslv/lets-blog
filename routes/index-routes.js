@@ -18,5 +18,5 @@ module.exports = app => {
   app.post('/new-post', postsController.savePost)
 
   app.get('/edit-post/:id', checkToken, postsController.editPost)
-  // app.post('/edit-post/:id', postsController.)
+  app.post('/edit-post/:id', postsController.editedPost)
 }

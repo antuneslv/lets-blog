@@ -25,6 +25,15 @@ class PostsDAO {
       callback
     )
   }
+
+  edit(id, data, callback) {
+    const { title, content } = data
+    this.db.run(
+      'UPDATE posts SET title = ?, content = ? WHERE id = ?',
+      [title, content, id],
+      callback
+    )
+  }
 }
 
 module.exports = conn => new PostsDAO(conn)
