@@ -130,6 +130,7 @@ body {
 
 /* Post Page */
 .post {
+  width: 100%;
   max-width: 1200px;
   font-family: 'Roboto Serif', serif;
   display: flex;
