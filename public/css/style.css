@@ -197,7 +197,7 @@ body {
   border: 1px solid #6b6b6b;
 }
 
-.validationError {
+.validation-error {
   color: #ff0000;
   font-size: 14px;
   text-align: center;
