@@ -13,7 +13,7 @@ Neste site você consegue:
 
 Neste projeto foram utilizados os conceitos estudados ao longo do módulo, como Servidor Web com o Express, CRUD, Verbos HTTP, Server Side Rendering (View Engines - EJS), MVC, Variáveis de ambiente, SQLite.
 
-A aplicação foi feita em **JavaScript e EJS** e utiliza **SQLite3 como banco de dados**, também utiliza as seguintes bibliotecas:
+A aplicação foi feita em **JavaScript e EJS** e utiliza **SQLite3** como banco de dados, também utiliza as seguintes bibliotecas:
 
 - Express
 - Express-session
